@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.m_transaksi.api.ApiClient;
 import com.example.m_transaksi.api.ApiInterface;
 import com.example.m_transaksi.model.login.Login;
-import com.google.android.material.textfield.TextInputLayout;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,7 +20,7 @@ import retrofit2.Response;
 
 public class login extends AppCompatActivity implements View.OnClickListener {
 
-    TextInputLayout etIdLogin, etPassLogin;
+    EditText etIdLogin, etPassLogin;
     Button btnLogin;
     TextView tvCreateAccount;
     ApiInterface apiInterface;
@@ -48,8 +48,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogin:
-                idLog = etIdLogin.getEditText().toString();
-                Password = etPassLogin.getEditText().toString();
+                idLog = etIdLogin.getText().toString();
+                Password = etPassLogin.getText().toString();
                 login(idLog, Password);
                 break;
             case R.id.tvCreateAccount:
