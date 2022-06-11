@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 10 Jun 2022 pada 05.48
+-- Waktu pembuatan: 11 Jun 2022 pada 07.25
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+  `id` varchar(11) NOT NULL,
   `nama_admin` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
   `no_telp` varchar(14) NOT NULL
@@ -39,7 +39,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `nama_admin`, `password`, `no_telp`) VALUES
-(123, 'bayy', '827ccb0eea8a706c4c34a16891f84e7b', '089716890845');
+('111', 'ajii', '827ccb0eea8a706c4c34a16891f84e7b', '89618095798'),
+('12345Aji', 'bayyu', '827ccb0eea8a706c4c34a16891f84e7b', '089716890845');
 
 --
 -- Indexes for dumped tables
@@ -50,16 +51,6 @@ INSERT INTO `admin` (`id`, `nama_admin`, `password`, `no_telp`) VALUES
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT untuk tabel yang dibuang
---
-
---
--- AUTO_INCREMENT untuk tabel `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1235;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
