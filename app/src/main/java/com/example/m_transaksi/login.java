@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.m_transaksi.api.ApiClient;
 import com.example.m_transaksi.api.ApiInterface;
-import com.example.m_transaksi.model.login.Login;
+import com.example.m_transaksi.model.Login.Login;
 
 import retrofit2.Call;
 import retrofit2.Callback;

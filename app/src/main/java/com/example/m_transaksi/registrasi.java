@@ -7,15 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.m_transaksi.api.ApiClient;
 import com.example.m_transaksi.api.ApiInterface;
-import com.example.m_transaksi.model.register.Register;
-import com.google.android.material.textfield.TextInputLayout;
+import com.example.m_transaksi.model.Registrasi.Registrasi;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -70,10 +67,10 @@ public class registrasi extends AppCompatActivity implements View.OnClickListene
     private void register(String idAdmin, String fullname, String password, String no_hp) {
 
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-        Call<Register> call = apiInterface.RegistrasiResponse(idAdmin, fullname, password, no_hp);
-        call.enqueue(new Callback<Register>() {
+        Call<Registrasi> call = apiInterface.RegistrasiResponse(idAdmin, fullname, password, no_hp);
+        call.enqueue(new Callback<Registrasi>() {
             @Override
-            public void onResponse(Call<Register> call, Response<Register> response) {
+            public void onResponse(Call<Registrasi> call, Response<Registrasi> response) {
                 if (response.body() != null && response.isSuccessful() && response.body().isStatus()) {
                     Toast.makeText(registrasi.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(registrasi.this, login.class);
@@ -85,7 +82,7 @@ public class registrasi extends AppCompatActivity implements View.OnClickListene
             }
 
             @Override
-            public void onFailure(Call<Register> call, Throwable t) {
+            public void onFailure(Call<Registrasi> call, Throwable t) {
                 Toast.makeText(registrasi.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });

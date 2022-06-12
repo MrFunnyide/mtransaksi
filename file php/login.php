@@ -3,14 +3,14 @@ include "connection.php";
 
 if ($_POST) {
      # Data
-     $id = $_POST['id'] ?? '';
+     $id_admin = $_POST['id_admin'] ?? '';
      $password = $_POST['password'] ?? '';
 
      $response = []; // simpan data
 
      // cek id di databse
-     $userQuery = $connection->prepare("SELECT * FROM admin WHERE id = ?");
-     $userQuery->execute(array($id));
+     $userQuery = $connection->prepare("SELECT * FROM admin WHERE id_admin = ?");
+     $userQuery->execute(array($id_admin));
      $query = $userQuery->fetch();
 
      if ($userQuery->rowCount() == 0) {
@@ -27,7 +27,7 @@ if ($_POST) {
                $response['status'] = true;
                $response['message'] = "Login berhasil";
                $response['data'] = [
-                    'id' => $query['id'],
+                    'id_admin' => $query['id_admin'],
                     'nama_admin' => $query['nama_admin'],
                     'no_telp' => $query['no_telp']
                ];
