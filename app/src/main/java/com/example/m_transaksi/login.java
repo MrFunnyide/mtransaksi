@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.m_transaksi.api.ApiClient;
 import com.example.m_transaksi.api.ApiInterface;
+import com.example.m_transaksi.model.Login.Data;
 import com.example.m_transaksi.model.Login.Login;
 
 import retrofit2.Call;
@@ -24,6 +25,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     Button btnLogin;
     TextView tvCreateAccount;
     ApiInterface apiInterface;
+    SessionManager sessionManager;
 
     // tempat simpan data
     String idLog, Password;
@@ -67,6 +69,12 @@ public class login extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
                 if (response.body() != null && response.isSuccessful() && response.body().isStatus()) {
+
+                    sessionManager = new SessionManager(login.this);
+                    Data loginData = response.body().getData();
+                    sessionManager.createLoginSeason(loginData);
+                    finish();
+
                     Toast.makeText(login.this, response.body().getData().getNamaAdmin(), Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(login.this, MainActivity.class);
                     startActivity(i);
