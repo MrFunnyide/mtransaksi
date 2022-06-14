@@ -51,11 +51,14 @@
 
         <Button
             android:id="@+id/btnUploud"
-            android:layout_margin="10dp"
-            android:padding="17dp"
-            android:text="Uploud Barang"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="17dp"
+            android:text="Uploud Barang" />
 
         <Button
             android:id="@+id/btnHistory"

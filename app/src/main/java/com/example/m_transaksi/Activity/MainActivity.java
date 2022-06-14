@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     // adapter
     private RecyclerView rvData;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout srlData;
     private ProgressBar pbBar;
 
+    Button btnUploud;
     TextView tvIdAdmin, tvNameAdmin;
     SessionManager sessionManager;
 //    String idAdmin;
@@ -50,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sessionManager = new SessionManager(MainActivity.this);
+
+        btnUploud = findViewById(R.id.btnUploud);
+        btnUploud.setOnClickListener(this);
 
         rvData =findViewById(R.id.rv_data);
 
@@ -146,5 +151,15 @@ public class MainActivity extends AppCompatActivity {
                 moveToLogin();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnUploud:
+                Intent i = new Intent(MainActivity.this, menuUploud.class);
+                startActivity(i);
+                break;
+        }
     }
 }

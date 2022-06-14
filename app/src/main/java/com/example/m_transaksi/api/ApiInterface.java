@@ -3,6 +3,7 @@ package com.example.m_transaksi.api;
 import com.example.m_transaksi.model.Barang.DataBarang;
 import com.example.m_transaksi.model.Login.Login;
 import com.example.m_transaksi.model.Registrasi.Registrasi;
+import com.example.m_transaksi.model.addBarang.ResponseAddBarang;
 
 
 import retrofit2.Call;
@@ -30,4 +31,13 @@ public interface ApiInterface {
     );
     @GET("retrieve.php")
     Call<DataBarang> DataBarangResponse();
+
+    @FormUrlEncoded
+    @POST("create.php")
+    Call<ResponseAddBarang> createData(
+            @Field("nama_brg") String nama_brg,
+            @Field("stok_brg") String stok_brg,
+            @Field("harga_brg") String harga_brg,
+            @Field("id_admin") String id_admin
+    );
 }

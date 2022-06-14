@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 14 Jun 2022 pada 13.27
+-- Waktu pembuatan: 14 Jun 2022 pada 18.20
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -71,7 +71,9 @@ INSERT INTO `barang` (`kode_brg`, `nama_brg`, `stok_brg`, `harga_brg`, `id_admin
 (5, 'mouse', 100, 100000, '111'),
 (6, 'Kabel USB', 100, 15000, '111'),
 (7, 'mousepad', 35, 20000, '111'),
-(8, 'SSD 256', 10, 400000, '111');
+(8, 'SSD 256', 10, 400000, '111'),
+(9, 'Keyboard 60%', 10, 500000, '111'),
+(18, 'hdmi', 10, 10000, '123Aji');
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `kode_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `kode_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`

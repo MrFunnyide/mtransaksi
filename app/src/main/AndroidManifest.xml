@@ -13,11 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mtransaksi">
         <activity
+            android:name=".Activity.menuUploud"
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity"/>
+        <activity
             android:name=".Activity.registrasi"
             android:exported="false" />
         <activity
             android:name=".Activity.login"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true">
