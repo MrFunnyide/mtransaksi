@@ -9,4 +9,6 @@
     <string name="registrasi_your_account">Registrasi Your Account</string>
     <string name="login_text">Login</string>
     <string name="back_login">Already Have Account ? Login Here</string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="barang_tersedia">Barang Yang Tersedia</string>
 </resources>
