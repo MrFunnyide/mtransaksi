@@ -38,6 +38,13 @@ public interface ApiInterface {
             @Field("nama_brg") String nama_brg,
             @Field("stok_brg") String stok_brg,
             @Field("harga_brg") String harga_brg,
-            @Field("id_admin") String id_admin
+            @Field("id_admin") String id_admin,
+            @Field("img_url") String img_url
+    );
+
+    @FormUrlEncoded
+    @POST("delete.php")
+    Call<ResponseAddBarang> deleteData(
+            @Field("kode_brg") int kode_brg
     );
 }

@@ -19,10 +19,10 @@ import retrofit2.Response;
 
 public class menuUploud extends AppCompatActivity {
 
-    private EditText etname_brg, etstok_brg, etharga_brg, etid_adminUP;
+    private EditText etname_brg, etstok_brg, etharga_brg, etid_adminUP, etimg_url;
     private Button btnUPData;
 
-    private String nama_barang, id_adminUP, stok_barang, harga_barang;
+    private String nama_barang, id_adminUP, stok_barang, harga_barang, etgmb_url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class menuUploud extends AppCompatActivity {
         etstok_brg = findViewById(R.id.et_stokBrg);
         etharga_brg = findViewById(R.id.et_hargaBrg);
         etid_adminUP = findViewById(R.id.et_idAdminUploud);
+        etimg_url = findViewById(R.id.et_img_url);
 
         btnUPData = findViewById(R.id.btnUploudData);
         btnUPData.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +44,7 @@ public class menuUploud extends AppCompatActivity {
                 stok_barang = etstok_brg.getText().toString();
                 harga_barang = etharga_brg.getText().toString();
                 id_adminUP = etid_adminUP.getText().toString();
+                etgmb_url = etimg_url.getText().toString();
 
                 if (nama_barang.trim().equals("")){
                     etname_brg.setError("Nama Harus di isi");
@@ -52,15 +54,18 @@ public class menuUploud extends AppCompatActivity {
                     etharga_brg.setError("Harga Barang Harus di isi");
                 } else if (id_adminUP.trim().equals("")) {
                     etid_adminUP.setError("Id Admin Harus di isi");
+                } else if (etgmb_url.trim().equals("")) {
+                    etimg_url.setError("Url Harus Berisi");
                 } else {
                     simpanData();
+
                 }
             }
         });
     }
     private void simpanData() {
         ApiInterface arData = ApiClient.getApiClient().create(ApiInterface.class);
-        Call<ResponseAddBarang> simpanData = arData.createData(nama_barang, stok_barang, harga_barang, id_adminUP);
+        Call<ResponseAddBarang> simpanData = arData.createData(nama_barang, stok_barang, harga_barang, id_adminUP, etgmb_url);
 
         simpanData.enqueue(new Callback<ResponseAddBarang>() {
             @Override

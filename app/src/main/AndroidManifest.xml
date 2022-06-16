@@ -13,9 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mtransaksi">
         <activity
+            android:name=".Activity.notaApp"
+            android:exported="false"
+            android:parentActivityName=".Activity.DetailBarang"/>
+        <activity
+            android:name=".Activity.DetailBarang"
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity
             android:name=".Activity.menuUploud"
             android:exported="false"
-            android:parentActivityName=".Activity.MainActivity"/>
+            android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.registrasi"
             android:exported="false" />

@@ -80,17 +80,17 @@
     </RelativeLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:layout_below="@+id/upadnHis"
         android:id="@+id/swl_data"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/upadnHis">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_data"
-            android:layout_margin="15dp"
             android:layout_width="match_parent"
-            tools:listitem="@layout/card_view"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            tools:listitem="@layout/card_view">
 
         </androidx.recyclerview.widget.RecyclerView>
 

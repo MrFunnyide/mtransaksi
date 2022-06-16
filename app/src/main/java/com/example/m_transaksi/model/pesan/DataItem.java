@@ -1,4 +1,4 @@
-package com.example.m_transaksi.model.Barang;
+package com.example.m_transaksi.model.pesan;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -10,25 +10,11 @@ public class DataItem{
 	@SerializedName("harga_brg")
 	private String hargaBrg;
 
-	@SerializedName("id_admin")
-	private String idAdmin;
-
 	@SerializedName("nama_brg")
-	private String namaBrg;
+	public String namaBrg;
 
 	@SerializedName("kode_brg")
 	private String kodeBrg;
-
-	@SerializedName("img_url")
-	private String img_url;
-
-	public String getImg_url() {
-		return img_url;
-	}
-
-	public void setImg_url(String img_url) {
-		this.img_url = img_url;
-	}
 
 	public void setStokBrg(String stokBrg){
 		this.stokBrg = stokBrg;
@@ -46,14 +32,6 @@ public class DataItem{
 		return hargaBrg;
 	}
 
-	public void setIdAdmin(String idAdmin){
-		this.idAdmin = idAdmin;
-	}
-
-	public String getIdAdmin(){
-		return idAdmin;
-	}
-
 	public void setNamaBrg(String namaBrg){
 		this.namaBrg = namaBrg;
 	}
@@ -68,17 +46,5 @@ public class DataItem{
 
 	public String getKodeBrg(){
 		return kodeBrg;
-	}
-
-	@Override
-	public String toString() {
-		return "DataItem{" +
-				"stokBrg='" + stokBrg + '\'' +
-				", hargaBrg='" + hargaBrg + '\'' +
-				", idAdmin='" + idAdmin + '\'' +
-				", namaBrg='" + namaBrg + '\'' +
-				", kodeBrg='" + kodeBrg + '\'' +
-				", img_url='" + img_url + '\'' +
-				'}';
 	}
 }

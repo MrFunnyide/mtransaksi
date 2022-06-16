@@ -23,6 +23,7 @@ if ($cek > 0 ) {
           $F["stok_brg"] = $ambil->stok_brg;
           $F["harga_brg"] = $ambil->harga_brg;
           $F["id_admin"] = $ambil->id_admin;
+          $F["img_url"] = $ambil->img_url;
 
           array_push($response['data'], $F);
 

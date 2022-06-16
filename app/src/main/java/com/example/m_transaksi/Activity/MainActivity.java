@@ -2,16 +2,19 @@ package com.example.m_transaksi.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +26,7 @@ import com.example.m_transaksi.api.ApiClient;
 import com.example.m_transaksi.api.ApiInterface;
 import com.example.m_transaksi.model.Barang.DataBarang;
 import com.example.m_transaksi.model.Barang.DataItem;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnUploud;
     TextView tvIdAdmin, tvNameAdmin;
+//    ImageView image;
     SessionManager sessionManager;
 //    String idAdmin;
     String nameAdmin;
@@ -51,6 +56,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        image = findViewById(R.id.img_url);
+
+        // library picaso
+
         sessionManager = new SessionManager(MainActivity.this);
 
         btnUploud = findViewById(R.id.btnUploud);
@@ -61,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         srlData = findViewById(R.id.swl_data);
         pbBar = findViewById(R.id.pb_data);
 
-        lmData = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        lmData = new GridLayoutManager(this, 2);
         rvData.setLayoutManager(lmData);
 
         if (!sessionManager.isLogged()) {
@@ -105,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Call<DataBarang> tampilBrg = arData.DataBarangResponse();
 
 
+
         tampilBrg.enqueue(new Callback<DataBarang>() {
             @Override
             public void onResponse(Call<DataBarang> call, Response<DataBarang> response) {
@@ -114,7 +125,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //                Toast.makeText(MainActivity.this, "Kode : " + kode + " | pesan : " + pesan, Toast.LENGTH_SHORT).show();
 
-                adData = new AdapterData(MainActivity.this, listData);
+                adData = new AdapterData(MainActivity.this, listData, new AdapterData.OnAdapterListener() {
+                    @Override
+                    public void onClick(DataItem dataItem) {
+                        // Toast.makeText(MainActivity.this, dataItem.getNamaBrg(), Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(MainActivity.this, DetailBarang.class);
+                        i.putExtra("intent_kodeBrg", dataItem.getKodeBrg());
+                        i.putExtra("intent_namaBrg", dataItem.getNamaBrg());
+                        i.putExtra("intent_stokBrg", dataItem.getStokBrg());
+                        i.putExtra("intent_hargaBrg", dataItem.getHargaBrg());
+                        i.putExtra("intent_imgBrg", dataItem.getImg_url());
+                        startActivity(i);
+                    }
+                });
                 rvData.setAdapter(adData);
                 adData.notifyDataSetChanged();
 
@@ -123,8 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFailure(Call<DataBarang> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Gagal Menghubungin Server : " + t.getMessage(), Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(MainActivity.this, "Gagal Menghubungi Server : " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 pbBar.setVisibility(View.INVISIBLE);
             }
         });
@@ -162,4 +184,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
 }
