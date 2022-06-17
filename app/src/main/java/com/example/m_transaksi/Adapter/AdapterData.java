@@ -2,6 +2,7 @@ package com.example.m_transaksi.Adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,18 +98,27 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.HolderData> {
                 @Override
                 public boolean onLongClick(View v) {
                     AlertDialog.Builder dialogPesan = new AlertDialog.Builder(ctx);
-                    dialogPesan.setMessage("Apakah Anda Ingin Menghapus Data ?");
+                    dialogPesan.setMessage("Ingin Menghapus Barang : ");
+                    dialogPesan.setTitle("Perhatian");
+                    dialogPesan.setIcon(R.mipmap.ic_launcher_round);
                     dialogPesan.setCancelable(true);
 
                     idLaundry = Integer.parseInt(tvKodeBrg.getText().toString());
 
-                    dialogPesan.setPositiveButton("Iya", new DialogInterface.OnClickListener() {
+                    dialogPesan.setPositiveButton("Hapus", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             deleteData();
                             // setelah delete data , dialog di tutup
                             dialog.dismiss();
-                            ((MainActivity) ctx).retrieveData();
+                            // kasih delay
+                            Handler hand = new Handler();
+                            hand.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    ((MainActivity) ctx).retrieveData();
+                                }
+                            },8000);
                         }
                     });
 
