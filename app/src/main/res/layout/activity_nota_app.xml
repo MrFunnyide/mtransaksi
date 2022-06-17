@@ -11,6 +11,7 @@
     <TextView
         android:textAlignment="center"
         android:textSize="25dp"
+        android:fontFamily="@font/mregular"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
         android:text="Nota Pesanan"
@@ -28,6 +29,7 @@
             android:textColor="@color/white"
             android:text="Nama Barang :  "
             android:textSize="15dp"
+            android:fontFamily="@font/mregular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -36,6 +38,7 @@
             android:id="@+id/tv_notanama"
             android:textSize="15dp"
             android:text="Hello"
+            android:fontFamily="@font/mregular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -50,6 +53,7 @@
         <TextView
             android:text="Jumlah Pesanan :  "
             android:textSize="15dp"
+            android:fontFamily="@font/mregular"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -58,6 +62,7 @@
             android:id="@+id/tv_notajumlah"
             android:textSize="15dp"
             android:text="Hello"
+            android:fontFamily="@font/mregular"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -73,6 +78,7 @@
         <TextView
             android:text="Harga Barang :  Rp."
             android:textSize="15dp"
+            android:fontFamily="@font/mregular"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -81,6 +87,7 @@
             android:id="@+id/tv_notaharga"
             android:textSize="15dp"
             android:text="Hello"
+            android:fontFamily="@font/mregular"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -96,6 +103,7 @@
         <TextView
             android:text="Total Semua :  Rp."
             android:textSize="15dp"
+            android:fontFamily="@font/mregular"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -103,6 +111,7 @@
         <TextView
             android:id="@+id/tv_notaTotal"
             android:textSize="15dp"
+            android:fontFamily="@font/mregular"
             android:text="Hello"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
@@ -113,6 +122,7 @@
     <Button
         android:id="@+id/btnHome"
         android:text="Home"
+        android:fontFamily="@font/mregular"
         android:textAllCaps="false"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"

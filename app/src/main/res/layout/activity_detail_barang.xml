@@ -23,6 +23,7 @@
         android:id="@+id/tv_NM_BG"
         android:layout_margin="15dp"
         android:text="Hello World"
+        android:fontFamily="@font/mregular"
         android:textStyle="bold"
         android:textSize="25dp"
         android:layout_width="match_parent"
@@ -38,6 +39,7 @@
         <TextView
             android:text="Stok Barang : "
             android:textSize="15dp"
+            android:fontFamily="@font/mregular"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -45,6 +47,7 @@
         <TextView
             android:id="@+id/tv_stokBrg"
             android:text="10"
+            android:fontFamily="@font/mregular"
             android:textColor="@color/white"
             android:textSize="15dp"
             android:layout_width="wrap_content"
@@ -62,6 +65,7 @@
         <TextView
             android:text="Harga Barang : "
             android:textSize="15dp"
+            android:fontFamily="@font/mregular"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -70,6 +74,7 @@
             android:id="@+id/tv_hargaBrg"
             android:text="10"
             android:textColor="@color/white"
+            android:fontFamily="@font/mregular"
             android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -88,7 +93,8 @@
             android:layout_margin="10dp"
             android:background="@color/white"
             android:padding="10dp"
-            android:hint="Masukkan Jumlah Barang"
+            android:hint="Jumlah pesanan barang"
+            android:fontFamily="@font/mregular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -96,7 +102,9 @@
             android:id="@+id/btn_pesanBarang"
             android:layout_margin="10dp"
             android:text="Pesan"
+            android:padding="10dp"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/mregular"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>

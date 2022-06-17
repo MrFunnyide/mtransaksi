@@ -16,6 +16,7 @@
         android:drawableStart="@drawable/ic_username"
         android:id="@+id/etIDLogin"
         android:hint="Id"
+        android:fontFamily="@font/mregular"
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_marginTop="390dp"
@@ -30,6 +31,7 @@
         android:drawableEnd="@drawable/ic_show"
         android:id="@+id/etPasswordLogin"
         android:hint="@string/password"
+        android:fontFamily="@font/mregular"
         android:inputType="textPassword"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
@@ -43,6 +45,7 @@
         android:layout_gravity="center"
         android:paddingHorizontal="50dp"
         android:paddingVertical="8dp"
+        android:fontFamily="@font/mregular"
         android:textSize="20sp"
         android:textAllCaps="false"
         app:cornerRadius="15dp"
@@ -67,6 +70,7 @@
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="@string/create_new_account"
+        android:fontFamily="@font/mregular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>
