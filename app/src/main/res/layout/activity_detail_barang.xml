@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/home"
     tools:context=".Activity.DetailBarang">
 
     <ImageView
@@ -18,6 +19,7 @@
         android:layout_height="300dp"/>
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/tv_NM_BG"
         android:layout_margin="15dp"
         android:text="Hello World"
@@ -36,12 +38,14 @@
         <TextView
             android:text="Stok Barang : "
             android:textSize="15dp"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/tv_stokBrg"
             android:text="10"
+            android:textColor="@color/white"
             android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -58,12 +62,14 @@
         <TextView
             android:text="Harga Barang : "
             android:textSize="15dp"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/tv_hargaBrg"
             android:text="10"
+            android:textColor="@color/white"
             android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -79,14 +85,16 @@
 
         <EditText
             android:id="@+id/et_brgBeli"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
+            android:background="@color/white"
+            android:padding="10dp"
             android:hint="Masukkan Jumlah Barang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btn_pesanBarang"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
             android:text="Pesan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

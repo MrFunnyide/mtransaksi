@@ -6,18 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/uploud"
     tools:context=".Activity.menuUploud">
 
-    <TextView
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:text="@string/uploud_barang_baru"
-        android:layout_marginBottom="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
     <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="270dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -25,7 +18,8 @@
             android:id="@+id/et_namaBarang"
             android:hint="@string/nama_barang_up"
             android:inputType="text"
-            android:textSize="20sp"
+            android:textSize="10sp"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -39,8 +33,9 @@
         <EditText
             android:id="@+id/et_stokBrg"
             android:hint="@string/stok_barang_up"
+            android:layout_marginHorizontal="10dp"
             android:inputType="number"
-            android:textSize="20sp"
+            android:textSize="10sp"
             android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -54,7 +49,8 @@
         <EditText
             android:id="@+id/et_hargaBrg"
             android:hint="@string/harga_barang_up"
-            android:textSize="20sp"
+            android:textSize="10sp"
+            android:layout_marginHorizontal="10dp"
             android:inputType="number"
             android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
@@ -70,8 +66,9 @@
             android:id="@+id/et_idAdminUploud"
             android:hint="@string/id_admin_up"
             android:inputType="text"
-            android:textSize="20sp"
+            android:textSize="10sp"
             android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -85,7 +82,8 @@
             android:id="@+id/et_img_url"
             android:hint="Url Gambar"
             android:inputType="text"
-            android:textSize="20sp"
+            android:layout_marginHorizontal="10dp"
+            android:textSize="10sp"
             android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -93,8 +91,11 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:background="@drawable/border"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:id="@+id/btnUploudData"
+        android:textAllCaps="false"
         android:paddingHorizontal="50dp"
         android:text="@string/uploud_data_up"
         android:layout_width="wrap_content"

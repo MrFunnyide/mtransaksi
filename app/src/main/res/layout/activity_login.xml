@@ -2,37 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#FDFFFC"
+    android:background="@drawable/sign"
     android:padding="50dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:contentDescription="M-Transaksi"
-        android:id="@+id/ivlogo"
-        android:layout_width="match_parent"
-        android:layout_height="203dp"
-        android:src="@drawable/logo" />
-
-    <TextView
-        android:text="@string/login_text"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <EditText
+        android:padding="9dp"
+        android:background="@color/white"
         android:inputType="text"
         android:autofillHints="@string/username"
         android:drawableStart="@drawable/ic_username"
         android:id="@+id/etIDLogin"
-        android:hint="ID"
+        android:hint="Id"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="390dp"
+        android:layout_marginBottom="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:padding="10dp"
+        android:background="@color/white"
         android:drawableStart="@drawable/ic_password"
         android:drawableEnd="@drawable/ic_show"
         android:id="@+id/etPasswordLogin"
@@ -45,12 +38,16 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:layout_marginTop="15dp"
         android:id="@+id/btnLogin"
-        android:padding="10dp"
+        android:layout_gravity="center"
+        android:paddingHorizontal="50dp"
+        android:paddingVertical="8dp"
         android:textSize="20sp"
+        android:textAllCaps="false"
         app:cornerRadius="15dp"
         android:text="@string/login"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 <!--    <TextView-->
@@ -64,6 +61,7 @@
 <!--        android:layout_height="wrap_content"/>-->
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/tvCreateAccount"
         android:textSize="15dp"
         android:layout_marginTop="15dp"

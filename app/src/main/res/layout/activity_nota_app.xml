@@ -5,30 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="20dp"
+    android:background="@drawable/transaksi"
     tools:context=".Activity.notaApp">
 
     <TextView
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold"
+        android:layout_marginTop="30dp"
         android:text="Nota Pesanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginHorizontal="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:textColor="@color/white"
             android:text="Nama Barang :  "
             android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:textColor="@color/white"
             android:id="@+id/tv_notanama"
             android:textSize="15dp"
             android:text="Hello"
@@ -38,6 +42,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -45,6 +50,7 @@
         <TextView
             android:text="Jumlah Pesanan :  "
             android:textSize="15dp"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -52,11 +58,13 @@
             android:id="@+id/tv_notajumlah"
             android:textSize="15dp"
             android:text="Hello"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
     <LinearLayout
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -65,6 +73,7 @@
         <TextView
             android:text="Harga Barang :  Rp."
             android:textSize="15dp"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -72,11 +81,13 @@
             android:id="@+id/tv_notaharga"
             android:textSize="15dp"
             android:text="Hello"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
     <LinearLayout
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -85,6 +96,7 @@
         <TextView
             android:text="Total Semua :  Rp."
             android:textSize="15dp"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -92,6 +104,7 @@
             android:id="@+id/tv_notaTotal"
             android:textSize="15dp"
             android:text="Hello"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -100,6 +113,7 @@
     <Button
         android:id="@+id/btnHome"
         android:text="Home"
+        android:textAllCaps="false"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
